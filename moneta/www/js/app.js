@@ -15,6 +15,10 @@ app.config(function ($stateProvider,$urlRouterProvider) {
             url: '/signup',
             templateUrl: 'views/signup.html'
     })
+        .state('menu',{
+            url: '/menu',
+            templateUrl: 'views/menu.html'
+    })
 });
 
 app.run(function($ionicPlatform) {
