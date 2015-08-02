@@ -1,71 +1,23 @@
-    <script id="templates/tabs.html" type="text/ng-template">
-      <ion-tabs class="tabs-icon-top tabs-positive">
-
-        <ion-tab title="Money" icon="ion-social-usd-outline" href="#/tab/home">
-          <ion-nav-view name="home-tab"></ion-nav-view>
-        </ion-tab>
-
-        <ion-tab title="Cajero" icon="ion-ios-world-outline" href="#/tab/cajero">
-          <ion-nav-view name="cajero-tab"></ion-nav-view>
-        </ion-tab>
-
-      </ion-tabs>
-    </script>
-
-    <script id="templates/home.html" type="text/ng-template">
-      
-      <ion-view view-title="Money">
-        <ion-content class="padding">
-      </br>
-      </br>    
-
-        <div class="list">
-        <h1 align= "center">Money</h1>
-          <div class="item range range-positive">
-            <i class="icon ion-social-usd"></i>
-            <input type="range" name="volume" min="0" max="1000" value="500">
-            <i class="icon ion-social-usd"></i>
-          </div>
-          </br>
-          <h1 align= "center">Type</h1>
-          <div class="button-bar">
-            <a class="button">Euro</a>
-            <a class="button">Dollar</a>
-            <a class="button">Pesos</a>
-            <a class="button">Libras</a>
-          </div>
-          </br>
-
-          <a href="menu.html" ><button class="button button-block button-positive">
-            Request
-          </button></a>
-        </div>
-
-
-        </ion-content>
-      </ion-view>
-    </script>
-
-  
-    <script id="templates/cajero.html" type="text/ng-template">
-      
-      <ion-view view-title="Cajero">
-        <ion-content class="padding">
-      </br>
-      </br> 
-        <p>Hola Cajero</p>
-
-        </ion-content>
-      </ion-view>
-    </script>
-
-    <script id="templates/nav-stack.html" type="text/ng-template">
-      <ion-view view-title="Tab Nav Stack">
-        <ion-content class="padding">
-          <p><img src="http://ionicframework.com/img/diagrams/tabs-nav-stack.png" style="width:100%"></p>
-        </ion-content>
-      </ion-view>
-    </script>
-    
-        <script src="js/index.js"></script>
-
+<ion-pane>
+    <ion-content class="cont_menu">
+        <a ui-sref="home"><div class="return"><img width="30vw" src="img/menu2.png"></div></a>
+        <p class="transfer">Transferencia</p>
+    <div class="slid">
+        <p class="text">Cantidad</p>
+        <div class="item range range-positive">
+      <input type="range" name="cantidad">
+    </div>
+    <div class="texts">
+        <p class="black" >Digite su cantidad</p>
+        <input class="tran" type="number" placeholder="0.00">
+    </div>
+    <div class="texts">
+        <p class="black">Tipo de Cambio</p>
+        <input class="tran" type="text" placeholder="Pesos Mexicanos(MEX)">
+    </div> 
+    <div class="boton">
+    <button class="mui" ng-click="captura()" ui-sref="menu">&#956;</button>
+    </div>
+    </ion-content>
+    </div>
+</ion-pane>

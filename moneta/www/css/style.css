@@ -1,5 +1,5 @@
 /* Empty. Add your own CSS if you like */
-.title,.tabs,.container,.email,.password,.small,.signin,div{
+.title,.tabs,.container,.email,.password,.small,.signin,.transfer,.cantidad,.texts,div{
     font-family: 'Ubuntu', sans-serif !important;
     font-weight: lighter !important;
 }
@@ -161,4 +161,52 @@
     margin: auto;
     width: 45%;
     background: #f76e5c;
+}
+.transfer{
+    font-size: 9vw;
+    color: #f76e5c;
+    margin: auto;
+    width: 80%;
+    text-align: left;
+}
+.slid{
+    width: 80% !important;
+    padding-top: 6%;
+    margin: auto;
+    border-width: 0px !important;
+}
+.texts{
+    width: 100%;
+    font-size: 5vw;
+    color: darkgrey;
+}
+.black{
+    color: black !important;
+}
+.tran{
+    width: 100%;
+    margin-top: 3%;
+    border-bottom: solid 2px #c9c9c9 !important;
+}
+.mui{
+    font-size: 7.3vw;
+    -webkit-border-radius: 30;
+  -moz-border-radius: 30;
+  border-radius: 30px;
+    width: 70%;
+    text-align: center;
+    margin: auto;
+  color: #ffffff;
+  padding: 4px 14px 4px 14px;
+  text-decoration: none;
+    align-content: center;
+    background: #f76e5c;
+}
+.boton{
+    width: 100%;
+    display: flex;
+    margin-top: 4%;
+}
+.range-positive{
+    border-width: 0px !important;
 }
