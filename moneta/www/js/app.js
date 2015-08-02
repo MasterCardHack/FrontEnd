@@ -13,7 +13,8 @@ app.config(function ($stateProvider,$urlRouterProvider) {
     })
         .state('signup',{
             url: '/signup',
-            templateUrl: 'views/signup.html'
+            templateUrl: 'views/signup.html',
+            controller:'Registro'
     })
         .state('menu',{
             url: '/menu',
@@ -32,4 +33,24 @@ app.run(function($ionicPlatform) {
       StatusBar.styleDefault();
     }
   });
+})
+
+/*Controlador para hacer la funcionalidad a Index*/
+.controller('Registro', function($scope, $http) {
+    $scope.captura = function(){
+        json = {"nombre":this.nombre,"apellido":this.apellido,"pasaporte":this.pasaporte,"nacionalidad":this.nacionalidad,"numeroTarjeta":this.numeroTarjeta,"caducidad":this.caducidad,"cvv":this.cvv};
+         $http.post('http://mastersofcode.com/api/customer',
+            {"nombre":this.nombre,
+                "apellido":this.apellido,
+                "pasaporte":this.pasaporte,
+                "nacionalidad":this.nacionalidad,
+                "numeroTarjeta":this.numeroTarjeta,
+                "caducidad":this.caducidad,
+                "cvv":this.cvv
+            }).success(function(data){
+                  console.log(data.password);
+            })
+    }
+  /*var tab = angular.element(document.querySelector('.tab-nav'));
+  tab.remove();*/
 })
