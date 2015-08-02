@@ -39,22 +39,15 @@ app.run(function($ionicPlatform) {
   });
 })
 
-/*Controlador para hacer la funcionalidad a Index*/
-.controller('Registro', function($scope, $http) {
+/*Controlador para hacer la funcionalidad a registro*/
+.controller('Registro',function($scope,$http,$location){ 
     $scope.captura = function(){
-        json = {"nombre":this.nombre,"apellido":this.apellido,"pasaporte":this.pasaporte,"nacionalidad":this.nacionalidad,"numeroTarjeta":this.numeroTarjeta,"caducidad":this.caducidad,"cvv":this.cvv};
-         $http.post('http://mastersofcode.com/api/customer',
-            {"nombre":this.nombre,
-                "apellido":this.apellido,
-                "pasaporte":this.pasaporte,
-                "nacionalidad":this.nacionalidad,
-                "numeroTarjeta":this.numeroTarjeta,
-                "caducidad":this.caducidad,
-                "cvv":this.cvv
-            }).success(function(data){
-                  console.log(data.password);
-            })
+        $http.get('http://192.168.20.246/moneta/ajax/registra.php?nombre='+this.nombre+'&apellido='+this.apellido+'&pasaporte='+this.pasaporte+'&nacionalidad='+this.nacionalidad+'&numeroTarjeta='+this.numeroTarjeta+'&caducidad='+this.caducidad+'&cvv='+this.cvv+'&pass='+this.pass+'&correo='+this.correo).then(function(resp) {
+            $location.path('/');
+            $scope.conditions = resp.data.conditions;
+      }, function(err) {
+        console.error('ERR', err);
+        // err.status will contain the status code
+      })
     }
-  /*var tab = angular.element(document.querySelector('.tab-nav'));
-  tab.remove();*/
-})
+});
