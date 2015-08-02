@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
-    <link href='http://fonts.googleapis.com/css?family=Ubuntu:500' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:300' rel='stylesheet' type='text/css'>
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
@@ -24,21 +24,24 @@
   <body ng-app="starter">
 
     <ion-pane>
-      <ion-header-bar class="bar-stable">
-        <h1 class="title">Moneta</h1>
-      </ion-header-bar>
-      <ion-content>
+      <ion-content class="content">
+        <div class="container">
+            <img class="logo" src="img/logo.png">
+            <p class="small">Entrar a Moneta o crear una cuenta</p>
+            <div class="inputs">
+            <input type="email" class="email" placeholder="E-mail">
+            <input type="password" class="password" placeholder="Password">
+            </div>
+            <div class="buttons">
+            <a class="signin">Iniciar sesion</a>
+            <a class="twitter">Entrar con Twitter</a>
+            <a class="facebook">Entrar con Facebook</a>
+            <a class="signup" href="login.html" class="tab-item">Registrarse</a>
+            <p class="aclaracion">Cualquier aclaracion dirigete a nuestro <a>FAQ</a></p>
+            </div>
+        </div>
       </ion-content>
     </ion-pane>
-
-    <div class="tabs">
-      <a  href="login.html" class="tab-item">
-        Login
-      </a> 
-      <a class="tab-item">
-        Register
-      </a>
-  </div>
 
 
 
