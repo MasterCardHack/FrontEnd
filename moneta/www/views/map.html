@@ -1,1 +1,112 @@
-<p>Esto es un mapa</p>
+<head>
+<meta charset="UTF-8">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+   <title></title>
+   <link href='http://fonts.googleapis.com/css?family=Ubuntu:300' rel='stylesheet' type='text/css'>
+   <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+   <link href="css/style.css" rel="stylesheet">
+
+     <style type="text/css">
+      html {height: 100%;}
+      body { height: 100%; margin: 0; padding: 0 }
+      #map-canvas { height: 100% }
+    </style>    
+     <script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+
+        <!--link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet"-->
+   <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+
+   <!--script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script-->
+   <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+     <!--link rel="stylesheet" href="css/magnific-popup.css" />
+    <script src="js/jquery.magnific-popup.min.js"></script-->  
+    
+
+   <!--style type="text/css">
+     html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
+   </style-->
+   <script>
+      function request(miCallback){
+       $.ajax({
+            url: "http://dmartin.org:8002/atms/v1/atm?Format=XML&PageLength=1&PageOffset=0&Latitude=19.4473966&Longitude=-99.20653115",
+            headers: { 'Access-Control-Allow-Origin': '*','Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE'},
+            type: 'GET',
+            crossDomain : true,
+            success: function(data, textStatus, jqXHR)  
+            {
+              console.log(textStatus);
+              console.log("LO LOGRO");
+              console.log(data);
+
+              var result = $(data).find("Distance").text();
+              console.log (result);
+
+              var resultname = $(data).find("Name").text();
+              console.log (resultname);
+              alert("Te encuentras a una distancia de " + ((result/0.62137)* 1000).toFixed(2) + " m  del cajero "+resultname);
+
+    
+
+            },
+            error: function (jqXHR, textStatus, errorThrown)
+            {
+                console.log(textStatus);
+                console.log("FALLO");        
+            }
+
+          });
+        miCallback();
+    }
+
+    request(function(){
+       console.log('terminó request');
+    });
+          
+    </script>
+
+
+   <script type="text/javascript"
+     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAKoe5u10E6Ms4NyRlz8iN5r98mTkrNZE">
+   </script>
+   <script type="text/javascript">
+     function initialize() {
+    var myLatlng = new google.maps.LatLng(19.4471,-99.2082);
+    var myLatlng2 = new google.maps.LatLng(19.4417,-99.2058);
+    var myLatlng3 = new google.maps.LatLng(19.4461,-99.2034);
+
+    var posArray = [[19.434720246276022,-99.2016385860504],[19.474044029018795,-99.20205450623695],[19.474044029018795,-99.20205450623695]];
+       
+    var mapOptions = {
+         center: { lat: 19.447, lng: -99.205},
+         zoom: 16
+       };
+       var map = new google.maps.Map(document.getElementById('map-canvas'),
+           mapOptions);
+
+    var marker = new google.maps.Marker({
+          position: myLatlng,
+          map: map,
+          title: 'Suc1!'
+      });
+
+    var marker2 = new google.maps.Marker({
+          position: myLatlng2,
+          map: map,
+          title: 'Suc2!'
+      });
+
+    var marker3 = new google.maps.Marker({
+          position: myLatlng3,
+          map: map,
+          title: 'Suc3!'
+      });
+    marker.setMap(map);
+    
+     }
+     google.maps.event.addDomListener(window, 'load', initialize);
+   </script>
+</head>
+ <body><p>Mapa</p>
+<div id="map-canvas"></div>
+</body>
