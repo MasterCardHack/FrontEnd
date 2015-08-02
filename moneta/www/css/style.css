@@ -210,3 +210,23 @@
 .range-positive{
     border-width: 0px !important;
 }
+.cajero{
+    width: 100%;
+    display: flex;
+    margin-top: 4%;
+}
+.cajero .mui{
+    
+    font-size: 4vw;
+    -webkit-border-radius: 30;
+  -moz-border-radius: 30;
+  border-radius: 30px;
+    width: 70%;
+    text-align: center;
+    margin: auto;
+  color: #ffffff;
+  padding: 4px 14px 4px 14px;
+  text-decoration: none;
+    align-content: center;
+    background: #f76e5c;
+}

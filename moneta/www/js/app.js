@@ -20,6 +20,10 @@ app.config(function ($stateProvider,$urlRouterProvider) {
             url: '/menu',
             templateUrl: 'views/menu.html'
     })
+    .state('mapa',{
+            url: '/menu',
+            templateUrl: 'views/map.html'
+    })
 });
 
 app.run(function($ionicPlatform) {
