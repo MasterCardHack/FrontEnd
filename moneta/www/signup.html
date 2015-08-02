@@ -23,7 +23,7 @@
   </head>
   <body ng-app="starter">
   <div class="bar bar-header bar-light">
-  <h1 class="title">Sign in</h1>
+  <h1 class="title">Sign up</h1>
 </div>
     
     <div id="Facebook button"   align ="center" >
@@ -160,33 +160,53 @@
   </div>
 
   
+
 <div class="list">
 </br>
 </br>
-  <label class="item item-input">
-    <span class="input-label">Username</span>
-    <input type="text">
-  </label>
-  <label class="item item-input">
-    <span class="input-label">Password</span>
-    <input type="password">
-  </label>
-  </br>
-  </br>
-    <fb:login-button scope="public_profile,email,user_friends,user_likes" onlogin="checkLoginState();" style="display:block;" >
+</br>
+<div style="display:block;" alig="center">
+  <fb:login-button scope="public_profile,email,user_friends,user_likes" onlogin="checkLoginState();" style="display:block;" >
   </fb:login-button >
 </div>
 
-<a href="menu.html" ><button class="button button-block button-positive">
-  Sign-in
-</button></a>
+
   <div id="status">
   </div>
 
+
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Number of credit card </span>
+    <input type="text" placeholder="xxxx-xxxx-xxxx-xxx">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">ID Pasaporte</span>
+    <input type="text" placeholder="xxxxxxxxxxx">
+  </label>
+
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Phone</span>
+    <input type="text" placeholder="xxxx-xxx">
+  </label>
+
+  <button class="button button-block button-positive">
+  Location
+</button>
+
+<div class="button-bar">
+  <a class="button">Euro</a>
+  <a class="button">Dollar</a>
+  <a class="button">Pesos</a>
+  <a class="button">Libras</a>
+</div>
+</div>
+
 </br>
 </br>
 
-
+<a href="menu.html" ><button class="button button-block button-positive">
+  Create Count
+</button></a>
 
 
   </body>
